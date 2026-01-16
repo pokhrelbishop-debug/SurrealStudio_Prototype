@@ -65,7 +65,7 @@ namespace SurrealStudio {
             glAttachShader(m_shaderProgram, vertexShader);
             glAttachShader(m_shaderProgram, fragmentShader);
             glLinkProgram(m_shaderProgram);
-
+            
             GLint success;
             glGetProgramiv(m_shaderProgram, GL_LINK_STATUS, &success);
             if (!success) {
