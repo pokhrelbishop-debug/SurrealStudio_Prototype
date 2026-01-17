@@ -8,7 +8,9 @@ namespace SurrealStudio {
 		{
 		public:
 
-
+			void Init();
+			void Shutdown();
+			void Update(); // one frame only
 		};
 	}
 }

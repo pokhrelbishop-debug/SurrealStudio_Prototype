@@ -4,35 +4,40 @@
 
 namespace SurrealStudio {
 
-	namespace Runtime
-	{
-		// variables needed
-		static std::chrono::high_resolution_clock::time_point s_LastTime;
+	namespace Runtime {
+		// Use a steady (monotonic) clock for frame intervals
+		using Clock = std::chrono::steady_clock;
+		static Clock::time_point s_LastTime;
 
 		float Time::s_DeltaTime = 0.0f;
 		float Time::s_Time = 0.0f;
 
 		void Time::Init()
 		{
-			s_LastTime = std::chrono::high_resolution_clock::now();
+			s_LastTime = Clock::now();
+			s_DeltaTime = 0.0f;
+			s_Time = 0.0f;
 		}
 
 		void Time::Update()
 		{
-			auto now = std::chrono::high_resolution_clock::now();
+			auto now = Clock::now();
 			std::chrono::duration<float> delta = now - s_LastTime;
+
+			// Properly assign delta and update last time
+			s_DeltaTime = delta.count();
 			s_LastTime = now;
 
-			s_LastTime = delta.count();
+			// Accumulate elapsed time
 			s_Time += s_DeltaTime;
 		}
 
-		float Time::GetDetlaTime() 
+		float Time::GetDeltaTime()
 		{
 			return s_DeltaTime;
 		}
 
-		float Time::GetTime() 
+		float Time::GetTime()
 		{
 			return s_Time;
 		}
