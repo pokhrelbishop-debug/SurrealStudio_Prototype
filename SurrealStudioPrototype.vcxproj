@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\SurrealRenderer\src\RendererCore\Shader.cpp" />
     <ClCompile Include="src\SurrealStudio3D\src\Core\ECS\Component3D.cpp" />
     <ClCompile Include="src\SurrealStudio3D\src\Core\ECS\Object3D.cpp" />
     <ClCompile Include="src\SurrealStudio3D\src\Core\ECS\System3D.cpp" />
@@ -166,6 +167,7 @@
     <ClCompile Include="src\SurrealStudio3D\src\Core\SS3DUI\SS3DMainTitleBar.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SurrealRenderer\src\RendererCore\Shader.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\Component3D.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\Object3D.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\System3D.h" />

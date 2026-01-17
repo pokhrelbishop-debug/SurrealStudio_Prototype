@@ -7,7 +7,7 @@
 #include <string>
 
 namespace SurrealStudio {
-
+	
 	namespace SurrealRenderer {
 
 		struct VertexShader

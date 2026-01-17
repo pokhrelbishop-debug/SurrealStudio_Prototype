@@ -494,7 +494,6 @@ namespace SurrealStudio {
 		bool ComponentManagerPanel3D::DrawComponent3DEditor(const char* componentOptions[], int index)
 		{
 			DrawComponentProperties(componentOptions, index);
-			// TODO: add advanced properties later
 
 			return true;
 		}

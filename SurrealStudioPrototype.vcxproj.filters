@@ -114,6 +114,9 @@
     <ClCompile Include="src\SurrealStudio3D\src\Core\SS3DUI\Panels\ComponentManager3D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SurrealRenderer\src\RendererCore\Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SurrealStudio\src\Core\Application.h">
@@ -216,6 +219,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SurrealStudio3D\src\Core\SS3DInputSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SurrealRenderer\src\RendererCore\Shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
