@@ -1,7 +1,51 @@
+# ==============================
+# Build directories
+# ==============================
 build/
+Debug/
+Release/
+x64/
+x86/
+out/
+
+# ==============================
+# Visual Studio
+# ==============================
 .vs/
 .vscode/
+*.VC.db
+*.VC.opendb
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# ==============================
+# Binaries & intermediates
+# ==============================
 *.exe
+*.dll
+*.lib
 *.obj
 *.pdb
+*.ilk
+*.idb
+*.iobj
+*.ipdb
+*.tlog
 *.log
+
+# ==============================
+# C++20 Modules / IFC (important)
+# ==============================
+*.ifc
+*.ifc.dt.*
+*.ifc.module.json
+*.ifc.dt.module.json
+*.ifc.dt.d
+
+# ==============================
+# OS junk
+# ==============================
+Thumbs.db
+.DS_Store
