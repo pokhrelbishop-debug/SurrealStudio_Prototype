@@ -4,7 +4,7 @@
 
 namespace SurrealStudio {
 
-	namespace Runtime {
+	namespace EngineCore {
 		// Use a steady (monotonic) clock for frame intervals
 		using Clock = std::chrono::steady_clock;
 		static Clock::time_point s_LastTime;

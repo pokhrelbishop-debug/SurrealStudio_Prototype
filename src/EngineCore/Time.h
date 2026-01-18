@@ -2,7 +2,7 @@
 
 namespace SurrealStudio {
 
-	namespace Runtime {
+	namespace EngineCore {
 
 		class Time
 		{
@@ -11,7 +11,7 @@ namespace SurrealStudio {
 			static void Update();
 
 			static float GetDeltaTime();
-			static float GetTime()	;
+			static float GetTime();
 
 		private:
 			static float s_DeltaTime;

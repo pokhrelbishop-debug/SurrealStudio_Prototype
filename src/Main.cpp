@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 {
 	try
 	{
-		std::unique_ptr<SSApplication> app(SurrealStudio::SSApplication::CreateApplication());
+		std::unique_ptr<SSApplication> app(SSApplication::CreateApplication());
 		if (app == nullptr)
 		{
 			ERROR("SurrealStudio::Application::CreateApplication function is a null pointer!");

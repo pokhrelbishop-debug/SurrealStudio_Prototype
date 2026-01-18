@@ -167,6 +167,8 @@
     <ClCompile Include="src\SurrealStudio3D\src\Core\SS3DUI\SS3DMainTitleBar.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\EngineCore\EngineDefines.h" />
+    <ClInclude Include="src\EngineCore\Logging.h" />
     <ClInclude Include="src\SurrealRenderer\src\RendererCore\Shader.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\Component3D.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\Object3D.h" />
@@ -190,7 +192,7 @@
     <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SceneManagerPanel.h" />
     <ClInclude Include="src\SurrealStudio2D\src\Core\Scene\Scene.h" />
     <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DEngineDefines.h" />
-    <ClInclude Include="src\SurrealStudio3D\src\SS3DEngineDefines.h" />
+    <ClInclude Include="src\EngineCore\SS3DEngineDefines.h" />
     <ClInclude Include="src\SurrealStudio\src\Core\Application.h" />
     <ClInclude Include="src\SurrealStudio\src\Core\SSEngineDefines.h" />
     <ClInclude Include="src\SurrealStudio\src\Core\SurrealStudioMainWindow.h" />

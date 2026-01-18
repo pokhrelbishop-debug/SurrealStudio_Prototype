@@ -2,7 +2,7 @@
 
 namespace SurrealStudio {
 
-	namespace Runtime
+	namespace EngineCore
 	{
 		class Engine
 		{

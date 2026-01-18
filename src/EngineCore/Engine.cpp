@@ -3,7 +3,7 @@
 
 namespace SurrealStudio {
 
-	namespace Runtime
+	namespace EngineCore
 	{
 		void Engine::Init()
 		{
