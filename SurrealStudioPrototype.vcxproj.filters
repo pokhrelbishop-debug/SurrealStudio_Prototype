@@ -78,6 +78,12 @@
     <ClCompile Include="src\SurrealRenderer\src\RendererCore\Shader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RuntimeContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SurrealStudio3D\src\Core\AssetManagement\Texture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SurrealStudio\src\Core\Application.h">
@@ -144,6 +150,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineCore\EngineDefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RuntimeContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SurrealStudio3D\src\Core\AssetManagement\Texture.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
