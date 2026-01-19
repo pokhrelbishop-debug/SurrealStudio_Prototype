@@ -24,49 +24,10 @@
     <ClCompile Include="src\SurrealStudio\src\Core\SurrealStudioMainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\SS2DMain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\Scene\Scene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\Scene\Subscene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\Scene\World.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SceneManagerPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\ObjectSettingsPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\UHRSRPSettingsPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealRenderer\src\Renderer2D\UHRSRP2D\UHRSRP2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealRenderer\src\Renderer2D\UHRSRP2D\UHRSRPCustomLights.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SurrealGameScriptIDE\src\SGSIDEMainWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SurrealGameScriptIDE\src\SGSIDE_Panels\SGSIDESSScriptExplorerPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SS2DWorldCanvasPanel.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealRenderer\src\Renderer2D\RendererRenderObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealRenderer\src\Renderer2D\Renderer2D.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\SurrealStudio2D\src\Core\Camera2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\SurrealStudio3D\src\SS3DMain.cpp">
@@ -128,55 +89,10 @@
     <ClInclude Include="src\SurrealStudio\src\Core\SurrealStudioMainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DEngineDefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\Scene\Scene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\Scene\Subscene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\Scene\World.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SceneManagerPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\ObjectSettingsPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\UHRSRPSettingsPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealRenderer\src\Renderer2D\UHRSRP2D\UHRSRP2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealRenderer\src\Renderer2D\UHRSRP2D\UHRSRPCustomLights.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\SurrealGameScriptIDE\src\SGSIDEMainWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\SurrealGameScriptIDE\src\SGSIDE_Panels\SGSIDESSScriptExplorerPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SS2D_Nodes\AnimationNodes\AnimationNodesBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SS2D_Nodes\SS2D_NodeBase.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\SS2DUI\Panels\SS2DWorldCanvasPanel.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealRenderer\src\Renderer2D\RendererRenderObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealRenderer\src\Renderer2D\Renderer2D.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\SurrealStudio2D\src\Core\Camera2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineCore\SS3DEngineDefines.h">

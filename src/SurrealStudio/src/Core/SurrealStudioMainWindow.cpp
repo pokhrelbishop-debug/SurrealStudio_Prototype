@@ -1,8 +1,5 @@
 #include "SurrealStudioMainWindow.h"
 
-#include "../src/SurrealStudio2D/src/Core/SS2DUI/Panels/SceneManagerPanel.h"
-#include "../src/SurrealStudio2D/src/Core/SS2DUI/Panels/ObjectSettingsPanel.h"
-
 #define GLFW_INCLUDE_NONE
 
 #include <glad/glad.h>
@@ -61,12 +58,6 @@ namespace SurrealStudio {
             ImGui_ImplOpenGL3_NewFrame();
             ImGui_ImplGlfw_NewFrame();
             ImGui::NewFrame();
-
-            static SurrealStudio2D::SceneManagerPanel sceneManagerPanel;
-            sceneManagerPanel.DrawSceneManagerPanel();
-
-            static SurrealStudio2D::ObjectSettingsPanel objectSettingsPanel;
-            objectSettingsPanel.DrawObjectSettingsPanel();
 
             ImGui::Render();
             int display_w, display_h;
