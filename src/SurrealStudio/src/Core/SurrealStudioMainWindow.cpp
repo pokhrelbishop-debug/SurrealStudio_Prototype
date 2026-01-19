@@ -63,7 +63,7 @@ namespace SurrealStudio {
             int display_w, display_h;
             glfwGetFramebufferSize(m_Window, &display_w, &display_h);
             glViewport(0, 0, display_w, display_h);
-            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClearColor(0.06f, 0.06f, 0.06f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
