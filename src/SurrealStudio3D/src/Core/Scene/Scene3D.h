@@ -30,7 +30,7 @@ namespace SurrealStudio {
 
 			private:
 
-				SceneData sceneData;
+				//SceneData sceneData;
 				std::vector<std::unique_ptr<SceneData>> m_Scene;  // NOTE: THERE WILL BE ONLY ONE SCENE IN A PROJECT
 			};
 		}

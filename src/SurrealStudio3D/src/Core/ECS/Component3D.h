@@ -201,6 +201,14 @@ namespace SurrealStudio {
 			{
 			public:
 
+				ComponentManager3D() = default;
+
+				ComponentManager3D(const ComponentManager3D&) = delete;
+				ComponentManager3D& operator=(const ComponentManager3D&) = delete;
+
+				ComponentManager3D(ComponentManager3D&&) noexcept = default;
+				ComponentManager3D& operator=(ComponentManager3D&&) noexcept = default;
+
 				bool AddComponent(Object3D& object,std::unique_ptr<Component3D>&& componetType) noexcept;
 				bool DeleteComponent(Object3D& object, Component3D* componentType) noexcept;
 

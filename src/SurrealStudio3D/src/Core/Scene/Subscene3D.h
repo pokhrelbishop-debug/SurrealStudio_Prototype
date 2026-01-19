@@ -30,7 +30,7 @@ namespace SurrealStudio {
 
 			private:
 
-				SubsceneData m_SubsceneData;
+				//SubsceneData m_SubsceneData;
 				std::vector<std::unique_ptr<SubsceneData>> m_Subscenes; // Just the data for Subscenes
 				
 				std::unique_ptr<World> m_Worlds;

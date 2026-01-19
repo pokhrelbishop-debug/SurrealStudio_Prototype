@@ -1,140 +1,83 @@
 #include "SS3DInputSystem.h"
 
-#include <string>
-#include <unordered_map>
-#include <functional>
-#include <vector>
-#include <stdexcept>
-#include <iostream>
-
 #include <GLFW/glfw3.h>
-
-#define GLFW_INCLUDE_NONE
+#include <iostream>
+#include <algorithm>
 
 namespace SurrealStudio {
 
-	namespace SurrealStudio3D {
+    namespace SurrealStudio3D {
 
-		bool SS3DInputSystem::InitializeSystem() noexcept
-		{
-			try
-			{
-				callbacks.clear();
-				
-				// GLFW init
-				if (!glfwInit())
-				{
-					std::cout << "Failed to initalize GLFW.\n";
-					glfwTerminate();
-					return false;
-				}
+        bool SS3DInputSystem::InitializeSystem() noexcept
+        {
+            callbacks.clear();
 
-				glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-				glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-				glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+            if (!glfwInit())
+            {
+                std::cout << "[SS3DInputSystem] Failed to initialize GLFW.\n";
+                return false;
+            }
 
-				return true;  // Init success
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+            glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-		bool SS3DInputSystem::RegisterCallback(InputSystemType inputType, InputCallback callback, std::vector<InputSystemType> typevec) noexcept
-		{
-			try
-			{
-				if (callbacks.size() > 1) return false;
+            return true;
+        }
 
-				if (callbacks.contains(inputType))
-				{
-					callbacks.emplace(callback);
-				}
-				else
-				{
-					callbacks.emplace(typevec);
-				}
+        bool SS3DInputSystem::RegisterCallback(
+            InputSystemType inputType,
+            InputCallback callback
+        ) noexcept
+        {
+            callbacks[inputType].push_back(std::move(callback));
+            return true;
+        }
 
-				return true;
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
+        bool SS3DInputSystem::UnregisterCallback(
+            InputSystemType inputType,
+            InputCallback callback
+        ) noexcept
+        {
+            auto it = callbacks.find(inputType);
+            if (it == callbacks.end())
+                return false;
 
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
+            auto& vec = it->second;
 
-		bool SS3DInputSystem::UnregisterCallback(InputSystemType inputType, InputCallback callback, std::vector<InputSystemType> typevec) noexcept
-		{
-			try
-			{
-				if (callbacks.contains(inputType))
-				{
-					for (auto it = callbacks.begin(); it != callbacks.end(); it++)\
-					{
-						// FINISH THIS
-					}
-				}
+            vec.erase(
+                std::remove_if(vec.begin(), vec.end(),
+                    [&](const InputCallback& cb)
+                    {
+                        // std::function has no operator==,
+                        // so we compare target addresses
+                        return cb.target_type() == callback.target_type();
+                    }),
+                vec.end()
+            );
 
-				return true;
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
+            return true;
+        }
 
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
+        bool SS3DInputSystem::DetectInputEvents() noexcept
+        {
+            // GLFW input polling
+            glfwPollEvents();
+            return true;
+        }
 
-		bool SS3DInputSystem::DetectInputEvents() noexcept
-		{
-			try
-			{
-				return true;
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
+        bool SS3DInputSystem::ProcessInputEvents() noexcept
+        {
+            
 
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
+            return true;
+        }
 
-		bool SS3DInputSystem::ProcessInputEvents() noexcept
-		{
-			try
-			{
-				return true;
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
+        bool SS3DInputSystem::ClearAllCallbacks() noexcept
+        {
+            callbacks.clear();
+            return true;
+        }
 
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
-
-		bool SS3DInputSystem::ClearAllCallbacks() noexcept
-		{
-			try
-			{
-				return true;
-			}
-			catch (const std::exception& e) {
-				std::cout << "Caught error " << e.what() << " at line "
-					<< __LINE__ << " in file " << __FILE__ << ".\n" << std::endl;
-
-				return false;
-			}
-			catch (...) { std::cout << "Unknown exception, in line " << __LINE__ << " in file " << __FILE__ << ".\n" << std::endl; return false; }
-		}
-	}
-}
+    } // namespace SurrealStudio3D
+} // namespace SurrealStudio

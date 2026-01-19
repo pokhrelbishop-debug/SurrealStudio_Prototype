@@ -34,6 +34,12 @@ namespace SurrealStudio {
 			{
 			public:
 
+				Object3D() = default;
+				Object3D(const Object3D&) = delete;
+				Object3D& operator=(const Object3D&) = delete;
+				Object3D(Object3D&&) noexcept = default;
+				Object3D& operator=(Object3D&&) noexcept = default;
+
 				bool Object3D_AddObject(std::unique_ptr<Object3D_ObjectData> object, const std::string& objectName) noexcept;
 				bool Object3D_RemoveObject(int objectID) noexcept;
 				bool Object3D_UpdateObject(int objectID, float deltaTime) noexcept;
@@ -41,7 +47,6 @@ namespace SurrealStudio {
 
 				Object3D_ObjectData* GetObject(int objectID) const noexcept;
 				const std::vector<std::unique_ptr<Object3D_ObjectData>>& GetAllObjects() const noexcept { return m_Objects; }
-				Object3D_ObjectData objectData;
 
 			private:
 

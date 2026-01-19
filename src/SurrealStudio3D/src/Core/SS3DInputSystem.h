@@ -1,18 +1,16 @@
 #pragma once
 
-#include <string>
 #include <unordered_map>
 #include <functional>
 #include <vector>
 
 namespace SurrealStudio {
 
-	namespace SurrealStudio3D {
+    namespace SurrealStudio3D {
 
-		class SS3DInputSystem
-		{
-		public:
-
+        class SS3DInputSystem
+        {
+        public:
             SS3DInputSystem() noexcept = default;
             ~SS3DInputSystem() noexcept = default;
 
@@ -21,8 +19,8 @@ namespace SurrealStudio {
                 None = 0,
                 OnClick,
                 OnMouseScroll,
-                OnKeyboardKeyPressed,  // Generic key press event
-                OnKeyboardKeyReleased, // Optional: key release event
+                OnKeyboardKeyPressed,
+                OnKeyboardKeyReleased,
                 OnWindowClosed,
                 OnWindowMinimized,
                 OnWindowMaximized,
@@ -37,18 +35,18 @@ namespace SurrealStudio {
                 float scrollDelta = 0.0f;
             };
 
-            using InputCallback = std::function<void(const InputEvent& e)>;
+            using InputCallback = std::function<void(const InputEvent&)>;
 
             bool InitializeSystem() noexcept;
-            bool RegisterCallback(InputSystemType inputType, InputCallback callback, std::vector<InputSystemType> typevec) noexcept;
-            bool UnregisterCallback(InputSystemType inputType, InputCallback callbac, std::vector<InputSystemType> typevec) noexcept;
+            bool RegisterCallback(InputSystemType inputType, InputCallback callback) noexcept;
+            bool UnregisterCallback(InputSystemType inputType, InputCallback callback) noexcept;
             bool DetectInputEvents() noexcept;
             bool ProcessInputEvents() noexcept;
             bool ClearAllCallbacks() noexcept;
 
         private:
-
             std::unordered_map<InputSystemType, std::vector<InputCallback>> callbacks;
-		};
-	}
-}
+        };
+
+    } // SurrealStudio3D
+} // SurrealStudio

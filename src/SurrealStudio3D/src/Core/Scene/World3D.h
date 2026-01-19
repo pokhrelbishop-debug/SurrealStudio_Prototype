@@ -30,11 +30,11 @@ namespace SurrealStudio {
 
 				bool DeleteAllWorlds() noexcept;
 
-				WorldData GetAllWorlds() const noexcept { return worldData; }
+				std::vector<std::unique_ptr<WorldData>>& GetAllWorlds() noexcept { return m_Worlds; }
 
 			private:
-
-				WorldData worldData;
+				
+				//WorldData worldData;
 				std::vector<std::unique_ptr<WorldData>> m_Worlds;
 			};
 		}
