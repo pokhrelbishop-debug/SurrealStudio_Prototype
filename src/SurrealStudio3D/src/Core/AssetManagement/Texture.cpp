@@ -1,5 +1,7 @@
 #include "Texture.h"
 
+#include <fstream>
+
 namespace SurrealStudio {
 	
 	namespace SurrealStudio3D {
@@ -10,7 +12,9 @@ namespace SurrealStudio {
 			{
 				// Placeholder for loading texture logic
 				// In a real implementation, you would load the texture from file here
-				textureType = m_CurrentTextureType;
+				// Load texture from textureFilePath, store it somewhere and set m_CurrentTextureType accordingly.
+				// Then, in other renderer functions, this function will be called to get the texture type. A specfic function
+				// will be made in the renderer to get the actual texture data based on the texture type and actually load the texture
 
 				return true;
 			}
