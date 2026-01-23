@@ -1,6 +1,10 @@
 #include "SceneManagerPanel3D.h"
 #include "../src/SurrealStudio3D/src/SS3DEngineDefines.h"
 
+#include "../src/SurrealStudio3D/src/Core/Scene/Scene3D.h"
+#include "../src/SurrealStudio3D/src/Core/Scene/Subscene3D.h"
+#include "../src/SurrealStudio3D/src/Core/Scene/World3D.h"	
+
 #include <imgui.h>
 #include <stdexcept>
 #include <iostream>
@@ -85,16 +89,19 @@ namespace SurrealStudio {
 			if (ImGui::Button("Create new main Scene"))
 			{
 				SS3D_INFO("New scene created!");
+				m_SceneManagerPanel3D_Scene3D.AddScene();
 			}
 
 			if (ImGui::Button("Create new main Subscene"))
 			{
 				SS3D_INFO("New main subscene created!");
+				m_SceneManagerPanel3D_Subscene3D.AddSubscene();
 			}
 
 			if (ImGui::Button("Create new World"))
 			{
 				SS3D_INFO("New World created!");
+				m_SceneManagerPanel3D_World3D.AddWorld();
 			}
 			return true;
 		}
@@ -212,7 +219,8 @@ namespace SurrealStudio {
 					ImGui::EndPopup();
 				}
 
-				if (m_SceneManagerPanel3D_Camera3D_DETAILS.size() < s_CE_uI__Camera3D_MAX_CAMERAS_REACHED_PER_WORLD_LIMIT && !s_B__Camera3D_openMaxCamerasReachedPerWorldLimit_SS3DERROR_DialogBox)
+				if (m_SceneManagerPanel3D_Camera3D_DETAILS.size() < s_CE_uI__Camera3D_MAX_CAMERAS_REACHED_PER_WORLD_LIMIT && !
+					s_B__Camera3D_openMaxCamerasReachedPerWorldLimit_SS3DERROR_DialogBox)
 				{
 					m_SceneManagerPanel3D_Camera3D_DETAILS.push_back(std::make_unique<Camera3D>());
 					m_SceneManagerPanel3D_Camera3D_DETAILS[0]->cameraName = c_CPTR__Camera3D_camera3DOptions[s_I__Camera3D_selectedCamera3DIndex];
@@ -222,6 +230,23 @@ namespace SurrealStudio {
 				ImGui::Spacing();
 				SceneManagerPanel3D_DrawCamera3DProperties(c_CPTR__Camera3D_camera3DOptions, s_I__Camera3D_selectedCamera3DIndex);
 			}
+
+			return true;
+		}
+
+		bool SceneManagerPanel3D::DrawSceneDetailAndProperties3D()
+		{
+			ImGui::Text("Scene Properties And Details");
+			ImGui::Spacing();
+
+			ImGui::Text("Scene Name: %s", m_SceneManagerPanel3D_SceneData.sceneName.c_str());
+			ImGui::Text("Subscene Name: %s", m_SceneManagerPanel3D_SubsceneData.subsceneName.c_str());
+			ImGui::Text("World Name: %s", m_SceneManagerPanel3D_WorldData.worldName.c_str());
+
+			ImGui::Text("Optional Information; is only needed for the user to see");
+			ImGui::InputText("Optional Scene Information", nullptr, 256);
+			ImGui::InputText("Optional Subscene Information", nullptr, 256);
+			ImGui::InputText("Optional World Information", nullptr, 256);
 
 			return true;
 		}
@@ -237,6 +262,12 @@ namespace SurrealStudio {
 					ImGui::Text("No scene currently made.");
 				}
 			}
+			catch (const std::exception& e) {
+				SS3D_ERROR(e.what()); return false;
+			}
+			catch (...) { SS3D_ERROR("Some unknown exception ocurred!"); return false; }
+
+			try { DrawSceneDetailAndProperties3D(); }
 			catch (const std::exception& e) {
 				SS3D_ERROR(e.what()); return false;
 			}

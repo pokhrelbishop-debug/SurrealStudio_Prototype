@@ -27,6 +27,8 @@ namespace SurrealStudio {
 
 				bool AddSubscene() noexcept;
 				bool DeleteSubscene(SubsceneData* data) noexcept;
+				bool DeleteAllSubscenes() noexcept { m_Subscenes.clear(); return true; }
+				bool GetCurrentSubscene() noexcept;
 
 			private:
 

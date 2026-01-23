@@ -6,6 +6,10 @@
 
 #include <glm/glm.hpp>
 
+#include "../src/SurrealStudio3D/src/Core/Scene/Scene3D.h"
+#include "../src/SurrealStudio3D/src/Core/Scene/Subscene3D.h"
+#include "../src/SurrealStudio3D/src/Core/Scene/World3D.h"	
+
 namespace SurrealStudio {
 
 	namespace SurrealStudio3D {
@@ -88,10 +92,20 @@ namespace SurrealStudio {
 			bool SceneManagerPanel3D_DrawLighting3DCreation();
 			bool SceneManagerPanel3D_DrawCamera3DCreation();
 
+			bool DrawSceneDetailAndProperties3D();
+
 		private:
 
 			std::vector<std::unique_ptr<Lighting3D>> m_SceneManagerPanel3D_Lighting3D_DETAILS;
 			std::vector<std::unique_ptr<Camera3D>> m_SceneManagerPanel3D_Camera3D_DETAILS;
+
+			SceneSystem3D::Scene m_SceneManagerPanel3D_Scene3D;
+			SceneSystem3D::Subscene m_SceneManagerPanel3D_Subscene3D;
+			SceneSystem3D::World m_SceneManagerPanel3D_World3D;
+
+			SceneSystem3D::SceneData m_SceneManagerPanel3D_SceneData;
+			SceneSystem3D::SubsceneData m_SceneManagerPanel3D_SubsceneData;
+			SceneSystem3D::WorldData m_SceneManagerPanel3D_WorldData;
 		};
 	}
 }
