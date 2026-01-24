@@ -1,25 +1,37 @@
 #include "Engine.h"
 #include "Time.h"
 
-namespace SurrealStudio {
+namespace SurrealStudio::EngineCore {
 
-	namespace EngineCore
-	{
-		void Engine::Init()
-		{
-			// Initialization code here
-			Time::Init();
-		}
+    void Engine::Init()
+    {
+        if (m_State != EngineState::Uninitialized)
+            return;
 
-		void Engine::Shutdown()
-		{
-			// Shutdown code here
-		}
+        m_State = EngineState::Initialized;
 
-		void Engine::Update()
-		{
-			// One frame update code here
-			Time::Update();
-		}
-	}
+        Time::Init();
+
+        m_State = EngineState::Running;
+    }
+
+    void Engine::Update()
+    {
+        if (m_State != EngineState::Running)
+            return;
+
+        Time::Update();
+    }
+
+    void Engine::Shutdown()
+    {
+        if (m_State == EngineState::ShuttingDown ||
+            m_State == EngineState::Uninitialized)
+            return;
+
+        m_State = EngineState::ShuttingDown;
+
+        // Shutdown subsystems here (later)
+    }
+
 }

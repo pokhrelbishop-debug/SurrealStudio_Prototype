@@ -2,16 +2,7 @@
 
 namespace SurrealStudio {
 
-	namespace EngineCore
-	{
-		class Engine
-		{
-		public:
-
-			void Init();
-			void Shutdown();
-			void Update(); // one frame only
-		};
+	namespace EngineCore {
 
 		enum class EngineState
 		{

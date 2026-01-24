@@ -1,5 +1,7 @@
 #include "SceneHierarchyPanel.h"
 
+#include <imgui.h>
+
 namespace SurrealStudio {
 
 	namespace SurrealStudio3D {
