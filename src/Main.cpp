@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 		}
 
 		if (!app->Initialize()) return ENGINE_FAILURE; INFO("Surreal Studio intialized!");
-		if (!app->Run(argc, argv))   return ENGINE_FAILURE; INFO("Surreal Studio running!");
+		if (!app->Run(argc, argv))  return ENGINE_FAILURE; INFO("Surreal Studio running!");
 		if (!app->Shutdown())  return ENGINE_FAILURE; INFO("Surreal Studio shutting down!");
 
 		return ENGINE_SUCCESS;

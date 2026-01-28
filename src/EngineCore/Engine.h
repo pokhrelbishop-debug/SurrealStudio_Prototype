@@ -1,5 +1,7 @@
 #pragma once
 
+#include "EngineState.h"
+
 namespace SurrealStudio {
 
 	namespace EngineCore
@@ -11,14 +13,13 @@ namespace SurrealStudio {
 			void Init();
 			void Shutdown();
 			void Update(); // one frame only
-		};
 
-		enum class EngineState
-		{
-			Uninitialized,
-			Initialized,
-			Running,
-			ShuttingDown
+			EngineState GetState() const noexcept { return m_State; }
+
+		private:
+
+			EngineState m_State = EngineState::Uninitialized;
+			
 		};
 	}
 }
