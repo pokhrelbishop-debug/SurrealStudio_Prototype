@@ -188,5 +188,8 @@
     <ClInclude Include="src\SurrealStudio3D\src\SS3DEngineDefines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\EngineCore\Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

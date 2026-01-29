@@ -52,10 +52,11 @@ namespace SurrealStudio {
 
 #if SS_DEBUG_ENABLE
 			
-#define SS_DEBUG(msg)   SS_LOG(Logging::LogLevel::Debug, msg)
+#define SS_DEBUG(msg)	SS_LOG(Logging::LogLevel::Debug, msg)
 #define SS_INFO(msg)    SS_LOG(Logging::LogLevel::Info,  msg)
 #define SS_WARNING(msg) SS_LOG(Logging::LogLevel::Warning, msg)
 #define SS_ERROR(msg)   SS_LOG(Logging::LogLevel::Error, msg)
+#define SS_FATAL_ERROR(msg) SS_LOG(Logging::LogLevel::Fatal, msg)
 
 #endif
 		};

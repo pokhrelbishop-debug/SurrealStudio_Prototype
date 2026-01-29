@@ -1,4 +1,6 @@
 #include "SurrealStudioMainWindow.h"
+#include "../src/SurrealStudio3D/src/Core/SS3DUI/Panels/ObjectSettingsPanel3D.h"
+#include "../src/SurrealStudio3D/src/Core/SS3DUI/Panels/SceneManagerPanel3D.h"
 
 #define GLFW_INCLUDE_NONE
 

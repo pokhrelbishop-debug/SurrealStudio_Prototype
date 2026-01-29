@@ -163,6 +163,7 @@
     <ClInclude Include="src\EngineCore\Engine.h" />
     <ClInclude Include="src\EngineCore\EngineMainConfiguration.h" />
     <ClInclude Include="src\EngineCore\EngineState.h" />
+    <ClInclude Include="src\EngineCore\Platform.h" />
     <ClInclude Include="src\EngineCore\Time.h" />
     <ClInclude Include="src\Runtime\Source\RuntimeContext.h" />
     <ClInclude Include="src\EngineCore\EngineDefines.h" />

@@ -25,8 +25,7 @@ int main(int argc, char** argv)
 
 		return ENGINE_SUCCESS;
 	}
-	catch (const std::exception& e)
-	{
+	catch (const std::exception& e) {
 		ERROR(e.what());
 		return SurrealStudio::ENGINE_FAILURE;
 	}
