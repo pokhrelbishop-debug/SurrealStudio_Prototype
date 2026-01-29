@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include "Time.h"
+#include "Logging.h"
 
 namespace SurrealStudio::EngineCore {
 
@@ -13,6 +14,7 @@ namespace SurrealStudio::EngineCore {
         Time::Init();
 
         m_State = EngineState::Running;
+        SS_INFO("Surreal Studio Engine initialized successfully.");
     }
 
     void Engine::Update()
@@ -21,15 +23,16 @@ namespace SurrealStudio::EngineCore {
             return;
 
         Time::Update();
+        SS_INFO("Surreal Studio Engine updated.");
     }
 
     void Engine::Shutdown()
     {
-        if (m_State == EngineState::ShuttingDown ||
-            m_State == EngineState::Uninitialized)
+        if (m_State == EngineState::ShuttingDown || m_State == EngineState::Uninitialized)
             return;
 
         m_State = EngineState::ShuttingDown;
+		SS_INFO("Shutting down Surreal Studio Engine...");
 
         // Shutdown subsystems here (later)
     }
