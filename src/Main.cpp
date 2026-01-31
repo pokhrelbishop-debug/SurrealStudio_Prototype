@@ -1,5 +1,6 @@
 #include "SurrealStudio/src/Core/Application.h"
 #include "SurrealStudio/src/Core/SSEngineDefines.h"
+#include "../src/EngineCore/Engine.h"
 
 #include <memory>
 #include <stdexcept>
@@ -13,15 +14,25 @@ int main(int argc, char** argv)
 	try
 	{
 		std::unique_ptr<SSApplication> app(SSApplication::CreateApplication());
+		auto engine = std::make_unique<EngineCore::Engine>();
+		
 		if (app == nullptr)
 		{
 			ERROR("SurrealStudio::Application::CreateApplication function is a null pointer!");
 			return ENGINE_FAILURE;
 		}
+		else if (engine == nullptr)
+		{
+			ERROR("Line 17, in Main.cpp is a null pointer!");
+			return ENGINE_FAILURE;
+		}
 
-		if (!app->Initialize()) return ENGINE_FAILURE; INFO("Surreal Studio intialized!");
-		if (!app->Run(argc, argv))  return ENGINE_FAILURE; INFO("Surreal Studio running!");
-		if (!app->Shutdown())  return ENGINE_FAILURE; INFO("Surreal Studio shutting down!");
+		engine->Init();
+		engine->Update();
+
+		app->Run(argc, argv);
+
+		engine->Shutdown();
 
 		return ENGINE_SUCCESS;
 	}
