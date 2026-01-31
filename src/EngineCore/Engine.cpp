@@ -2,6 +2,9 @@
 #include "Time.h"
 #include "Logging.h"
 
+#include "../src/SurrealStudio3D/src/Core/Scene/World3D.h"
+#include "../src/SurrealRenderer/src/RendererCore/Renderer.h"
+
 namespace SurrealStudio::EngineCore {
 
     void Engine::Init()
@@ -23,7 +26,16 @@ namespace SurrealStudio::EngineCore {
             return;
 
         Time::Update();
-        SS_INFO("Surreal Studio Engine updated.");
+        //float dt = Time::GetDeltaTime();
+
+        //m_World.UpdateAllObjects(dt); 
+        //m_Renderer.RenderAll(m_World);
+
+        //static int frameCounter = 0;
+        //frameCounter++;
+
+        //if (frameCounter % 60 == 0)
+        //    SS_INFO("Surreal Studio Engine updated.");
     }
 
     void Engine::Shutdown()

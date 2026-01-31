@@ -30,7 +30,7 @@ namespace SurrealStudio {
 				if (m_Scene.empty())
 					return false;
 
-				m_Scene.clear();
+				m_Scene.clear();  // A scene is the root container, so everything inside it gets deleted too
 
 				return true;
 			}

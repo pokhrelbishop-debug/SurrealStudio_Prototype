@@ -135,6 +135,7 @@
     <ClCompile Include="src\EngineCore\Time.cpp" />
     <ClCompile Include="src\Runtime\Source\RuntimeContext.cpp" />
     <ClCompile Include="src\Runtime\Source\RuntimeMain.cpp" />
+    <ClCompile Include="src\SurrealRenderer\src\RendererCore\Renderer.cpp" />
     <ClCompile Include="src\SurrealRenderer\src\RendererCore\Shader.cpp" />
     <ClCompile Include="src\SurrealStudio3D\src\Core\AssetManagement\Texture.cpp" />
     <ClCompile Include="src\SurrealStudio3D\src\Core\ECS\Component3D.cpp" />
@@ -168,6 +169,7 @@
     <ClInclude Include="src\Runtime\Source\RuntimeContext.h" />
     <ClInclude Include="src\EngineCore\EngineDefines.h" />
     <ClInclude Include="src\EngineCore\Logging.h" />
+    <ClInclude Include="src\SurrealRenderer\src\RendererCore\Renderer.h" />
     <ClInclude Include="src\SurrealRenderer\src\RendererCore\Shader.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\AssetManagement\Texture.h" />
     <ClInclude Include="src\SurrealStudio3D\src\Core\ECS\Component3D.h" />

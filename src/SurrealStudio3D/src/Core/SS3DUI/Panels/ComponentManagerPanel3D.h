@@ -7,6 +7,8 @@ namespace SurrealStudio {
 
 	namespace SurrealStudio3D {
 
+		class ECS::Object3D;
+
 		class ComponentManagerPanel3D
 		{
 		public:

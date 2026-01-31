@@ -42,6 +42,31 @@ namespace SurrealStudio {
 				m_Worlds.clear();
 				return true;
 			}
+
+			//void World::UpdateAllObjects(float deltaTime) noexcept
+			//{
+			//	for (auto& worldData : m_Worlds)
+			//	{
+			//		if (!worldData) continue;
+
+			//		for (auto& objectData : worldData->objects)
+			//		{
+			//			if (!objectData) continue;
+
+			//			worldData->objectManager->Object3D_UpdateObject(0, deltaTime);
+			//		}
+			//	}
+			//}
+
+			// In World.cpp
+			//std::vector<ECS::Object3D*> World::GetObjects() const noexcept
+			//{
+			//	std::vector<ECS::Object3D*> rawPtrs;
+			//	for (const auto& objPtr : objects)
+			//		rawPtrs.push_back(objPtr.get());
+			//	return rawPtrs;
+			//}
+
 		}
 	}
 }

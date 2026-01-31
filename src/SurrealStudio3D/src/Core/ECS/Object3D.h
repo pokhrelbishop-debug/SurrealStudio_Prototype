@@ -6,6 +6,9 @@
 
 #include <glm/glm.hpp>
 
+#include "Component3D.h"
+#include "../src/SurrealRenderer/src/RendererCore/Renderer.h"
+
 namespace SurrealStudio {
 
 	namespace SurrealStudio3D {
@@ -52,6 +55,9 @@ namespace SurrealStudio {
 
 				std::vector<std::unique_ptr<Object3D_ObjectData>> m_Objects;
 				int m_NextID = 0;
+
+				//TransformComponent objectTransformComponent;
+				//friend class SurrealRenderer::Renderer;
 			};
 		}
 	}

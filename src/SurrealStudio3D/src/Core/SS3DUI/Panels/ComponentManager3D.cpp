@@ -12,6 +12,8 @@ namespace SurrealStudio {
 
 	namespace SurrealStudio3D {
 
+		class ECS::Object3D;
+
 		bool ComponentManagerPanel3D::DrawComponentCreation()
 		{
 			// Variables needed for this  function

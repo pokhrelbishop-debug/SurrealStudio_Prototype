@@ -13,6 +13,8 @@ namespace SurrealStudio {
 
 		namespace ECS {
 
+			class Object3D;
+
 			using Vector3 = glm::vec3;
 
 			struct TransformComponent

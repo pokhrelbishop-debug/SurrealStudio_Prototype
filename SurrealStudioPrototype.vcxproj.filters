@@ -96,6 +96,9 @@
     <ClCompile Include="src\Runtime\Source\RuntimeMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\SurrealRenderer\src\RendererCore\Renderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SurrealStudio\src\Core\Application.h">
@@ -189,6 +192,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineCore\Platform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SurrealRenderer\src\RendererCore\Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

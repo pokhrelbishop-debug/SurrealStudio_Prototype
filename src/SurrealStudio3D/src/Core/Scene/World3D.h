@@ -15,7 +15,8 @@ namespace SurrealStudio {
 			struct WorldData
 			{
 				std::string worldName;
-				std::vector<std::unique_ptr<ECS::Object3D_ObjectData>> objects;
+				//std::vector<std::unique_ptr<ECS::Object3D_ObjectData>> objects;
+				//ECS::Object3D* objectManager = nullptr;
 			};
 
 			class World
@@ -29,9 +30,13 @@ namespace SurrealStudio {
 				bool DeleteWorld(WorldData* data) noexcept;
 
 				bool DeleteAllWorlds() noexcept;
+				//void UpdateAllObjects(float deltaTime) noexcept;
 
 				std::vector<std::unique_ptr<WorldData>>& GetAllWorlds() noexcept { return m_Worlds; }
 
+				//std::vector<std::unique_ptr<ECS::Object3D>> objects; // owned
+				//std::vector<Object3D*> GetObjects() const noexcept; // raw pointers for rendering
+				// temporary fix
 			private:
 				
 				//WorldData worldData;
